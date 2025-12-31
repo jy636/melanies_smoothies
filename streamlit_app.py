@@ -33,8 +33,8 @@ if ingredients_List:
     
     for fruit_chosen in ingredients_List:
             ingredients_string += fruit_chosen+' '
-            search_on = pd_dt.loc[pd_dt['FRUIT_NAME']==fruit_chosen,'search_on'].iloc(0)
-            st.write('The search on for '+ fruit_chosen + ' is '+ search_on +'.')
+            search_on = pd_dt.loc[pd_dt['FRUIT_NAME']==fruit_chosen,'search_on'].iloc[0]
+            st.write('The search on for ', fruit_chosen ,' is ', search_on ,'.')
        
             st.subheader(fruit_chosen, ' Nutrition Information')
             smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
